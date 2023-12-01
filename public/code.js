@@ -12,11 +12,11 @@
         document.querySelector(".join-screen").classList.add("active");
     })
 
-    document.querySelector("#receive-btn").addEventListener("click",function()
+    /*document.querySelector("#receive-btn").addEventListener("click",function()
     {
         document.querySelector(".home").classList.remove("active");
         document.querySelector(".j-screen").classList.add("active");
-    })
+    })*/
 
     document.querySelector("#sender-start-con-btn").addEventListener("click", function() {
         let joinID = generateID();
@@ -65,7 +65,7 @@
         socket.emit("file-meta",
             {
                 uid: receiverID,
-                metadata: metadata
+                metadata:metadata
             });
 
 
@@ -86,8 +86,8 @@
         });
     }
 
-    document.querySelector("#receiver-start-con-btn").addEventListener("click", function () {
-        senderID = document.querySelector("#join-id").value;
+    /*document.querySelector("#receiver-start-con-btn").addEventListener("click", function () {
+        senderID = document.querySelector("#input-join-id").value;
         if (senderID.length == 0) {
             return;
         }
@@ -113,6 +113,8 @@
         fileShare.transmitted=0;
         fileShare.buffer=[];
 
+        console.log('meta',fileShare);
+
 
         let el = document.createElement("div");
         el.classList.add("item");
@@ -124,7 +126,6 @@
 
 
         fileShare.progress_node=el.querySelector(".progress");
-
         socket.emit("fs-start",
         {
             uid:senderID
@@ -145,7 +146,7 @@
                 uid:senderID
             });
         }
-    });
+    });*/
 
 })();
 
